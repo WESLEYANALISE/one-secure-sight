@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { ShieldCheck, ArrowRight, Wrench } from "lucide-react";
+import { ShieldCheck, ArrowRight, Wrench, Camera, Bell, Zap, PhoneCall, Fingerprint } from "lucide-react";
 import hero from "@/assets/hero.jpg";
 import heroMobile from "@/assets/hero-mobile.jpg";
 import { COMPANY } from "@/config/company";
@@ -92,15 +92,26 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* Trust bar */}
+      {/* Services marquee */}
       <div className="absolute bottom-0 left-0 right-0 z-10 border-t border-border/50 bg-background/60 backdrop-blur">
         <div className="container py-4 overflow-hidden mask-fade-x">
-          <div className="flex gap-12 animate-marquee whitespace-nowrap">
+          <div className="flex gap-10 animate-marquee whitespace-nowrap">
             {[...Array(2)].map((_, k) => (
-              <div key={k} className="flex gap-12 items-center">
-                {["INTELBRAS", "HIKVISION", "JFL", "GIGA SECURITY", "POSITIVON", "CITROX", "DAHUA"].map((b) => (
-                  <span key={b + k} className="font-display font-bold text-sm tracking-[0.2em] text-muted-foreground/70">
-                    {b}
+              <div key={k} className="flex gap-10 items-center">
+                {[
+                  { icon: Camera, label: "CFTV / Câmeras de Segurança" },
+                  { icon: Bell, label: "Alarme Monitorado" },
+                  { icon: Zap, label: "Cerca Elétrica" },
+                  { icon: PhoneCall, label: "Interfonia / Vídeo Porteiro" },
+                  { icon: Fingerprint, label: "Controle de Acesso" },
+                  { icon: Wrench, label: "Manutenção e Suporte 24h" },
+                ].map(({ icon: Icon, label }) => (
+                  <span
+                    key={label + k}
+                    className="inline-flex items-center gap-2 font-display font-bold text-sm tracking-[0.15em] uppercase text-muted-foreground/80"
+                  >
+                    <Icon className="w-4 h-4 text-primary flex-shrink-0" />
+                    {label}
                   </span>
                 ))}
               </div>
