@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { ShieldCheck, MessageCircle } from "lucide-react";
 import hero from "@/assets/hero.jpg";
 import { COMPANY, whatsappLink } from "@/config/company";
+import QuoteDialog from "./QuoteDialog";
 
 const Hero = () => {
   return (
@@ -45,14 +46,15 @@ const Hero = () => {
                 Falar no WhatsApp
               </a>
             </Button>
-            <Button
-              asChild
-              size="lg"
-              variant="outline"
-              className="border-primary/50 text-foreground hover:bg-primary hover:text-primary-foreground font-semibold text-base h-14 px-8"
-            >
-              <a href="#contato">Solicitar orçamento</a>
-            </Button>
+            <QuoteDialog>
+              <Button
+                size="lg"
+                variant="outline"
+                className="border-primary/50 text-foreground hover:bg-primary hover:text-primary-foreground font-semibold text-base h-14 px-8"
+              >
+                Solicitar orçamento
+              </Button>
+            </QuoteDialog>
           </div>
 
           <div className="grid grid-cols-3 gap-4 sm:gap-6 mt-10 sm:mt-12 max-w-lg pt-8 border-t border-border/50">

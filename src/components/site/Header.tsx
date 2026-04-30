@@ -2,8 +2,8 @@ import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import logo from "@/assets/logo.png";
-import { whatsappLink } from "@/config/company";
 import { cn } from "@/lib/utils";
+import QuoteDialog from "./QuoteDialog";
 
 const links = [
   { href: "#servicos", label: "Serviços" },
@@ -53,11 +53,11 @@ const Header = () => {
         </nav>
 
         <div className="hidden lg:block">
-          <Button asChild variant="default" className="bg-primary text-primary-foreground hover:bg-primary-glow shadow-gold font-semibold">
-            <a href={whatsappLink()} target="_blank" rel="noopener noreferrer">
+          <QuoteDialog>
+            <Button variant="default" className="bg-primary text-primary-foreground hover:bg-primary-glow shadow-gold font-semibold">
               Solicitar Orçamento
-            </a>
-          </Button>
+            </Button>
+          </QuoteDialog>
         </div>
 
         <button
@@ -82,11 +82,11 @@ const Header = () => {
                 {l.label}
               </a>
             ))}
-            <Button asChild className="bg-primary text-primary-foreground hover:bg-primary-glow font-semibold mt-2">
-              <a href={whatsappLink()} target="_blank" rel="noopener noreferrer">
+            <QuoteDialog>
+              <Button onClick={() => setOpen(false)} className="bg-primary text-primary-foreground hover:bg-primary-glow font-semibold mt-2 w-full">
                 Solicitar Orçamento
-              </a>
-            </Button>
+              </Button>
+            </QuoteDialog>
           </nav>
         </div>
       )}
