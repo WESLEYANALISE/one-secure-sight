@@ -53,11 +53,11 @@ const Header = () => {
         </nav>
 
         <div className="hidden lg:block">
-          <Button asChild variant="default" className="bg-primary text-primary-foreground hover:bg-primary-glow shadow-gold font-semibold">
-            <a href={whatsappLink()} target="_blank" rel="noopener noreferrer">
+          <QuoteDialog>
+            <Button variant="default" className="bg-primary text-primary-foreground hover:bg-primary-glow shadow-gold font-semibold">
               Solicitar Orçamento
-            </a>
-          </Button>
+            </Button>
+          </QuoteDialog>
         </div>
 
         <button
@@ -82,11 +82,11 @@ const Header = () => {
                 {l.label}
               </a>
             ))}
-            <Button asChild className="bg-primary text-primary-foreground hover:bg-primary-glow font-semibold mt-2">
-              <a href={whatsappLink()} target="_blank" rel="noopener noreferrer">
+            <QuoteDialog>
+              <Button onClick={() => setOpen(false)} className="bg-primary text-primary-foreground hover:bg-primary-glow font-semibold mt-2 w-full">
                 Solicitar Orçamento
-              </a>
-            </Button>
+              </Button>
+            </QuoteDialog>
           </nav>
         </div>
       )}
