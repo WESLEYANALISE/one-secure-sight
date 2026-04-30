@@ -1,23 +1,17 @@
-Imagens novas, mais realistas, já geradas com Nano Banana Pro (Gemini 3 Pro Image):
-- `src/assets/hero.jpg` — nova hero desktop cinematográfica (16:9)
-- `src/assets/hero-mobile.jpg` — nova hero vertical 9:16 otimizada para mobile
-- `src/assets/services/interfonia.jpg` — regenerada, sem cara de IA
+3 ajustes:
 
-Ajuste no Hero (`src/components/site/Hero.tsx`) para servir a imagem certa por viewport usando `<picture>`:
+**1. Hero — botão "Falar no WhatsApp" → "Nossos serviços"** (`src/components/site/Hero.tsx`)
+- Trocar import `MessageCircle` por `Camera`, remover `whatsappLink`
+- Botão secundário vira `<a href="#servicos">` com ícone Camera e texto "Nossos serviços" (scroll suave já está ativo via `html { scroll-behavior: smooth }`)
 
-```tsx
-import hero from "@/assets/hero.jpg";
-import heroMobile from "@/assets/hero-mobile.jpg";
-...
-<picture>
-  <source media="(max-width: 768px)" srcSet={heroMobile} />
-  <img
-    src={hero}
-    alt="Câmera de segurança CFTV em ambiente noturno"
-    className="w-full h-full object-cover scale-105"
-    fetchPriority="high"
-  />
-</picture>
-```
+**2. Reforçar animação de reflexo no botão "Solicitar orçamento"**
+- O CSS `.btn-shine::after` já existe mas o brilho pode estar sutil. Aumentar opacidade do gradiente para `hsl(0 0% 100% / 0.75)` e largura do reflexo para 40%, e reduzir o intervalo para 2.5s ease-in-out infinite. Aplicar também no botão do carrossel.
 
-Resultado: no mobile carrega imagem vertical realista enquadrada certinho; no desktop a versão wide. Performance melhor (mobile não baixa imagem 1820px) e menos "cara de IA".
+**3. Carrossel de serviços responsivo no mobile** (`src/components/site/ServicesCarousel.tsx`)
+- Trocar `aspect-[16/10]` (que fica muito largo/alto e corta) por **altura fixa adaptativa**: `min-h-[460px] sm:min-h-[420px] lg:min-h-[460px]` sem aspect-ratio no mobile, mantendo aspect no desktop
+- No mobile: gradiente vertical mais forte (de baixo) garantindo legibilidade do texto sobreposto
+- Aumentar padding interno mobile (p-5 → conteúdo bem espaçado), título menor no mobile (`text-xl`), bullets mostrados também no mobile (sem `hidden sm:block`)
+- Indicadores (dots) maiores no mobile (touch target)
+- Reduzir tamanho do botão no mobile e garantir que caiba
+
+Mantém autoplay 5s, loop e pausa no hover.

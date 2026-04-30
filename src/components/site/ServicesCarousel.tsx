@@ -80,7 +80,7 @@ const ServicesCarousel = () => {
         <div className="flex">
           {slides.map((s, i) => (
             <div key={s.title} className="flex-[0_0_100%] min-w-0 relative">
-              <div className="relative aspect-[16/10] sm:aspect-[16/8] lg:aspect-[16/7]">
+              <div className="relative min-h-[520px] sm:min-h-[440px] lg:min-h-[500px] sm:aspect-[16/8] lg:aspect-[16/7]">
                 <img
                   src={s.image}
                   alt={`${s.title} — ${s.subtitle}`}
@@ -89,35 +89,40 @@ const ServicesCarousel = () => {
                   height={720}
                   className="absolute inset-0 w-full h-full object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-r from-background via-background/85 to-background/30" />
-                <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-transparent to-transparent" />
+                {/* Mobile: gradient bottom-up */}
+                <div className="absolute inset-0 sm:hidden bg-gradient-to-t from-background via-background/85 to-background/30" />
+                {/* Desktop: gradient left-right */}
+                <div className="absolute inset-0 hidden sm:block bg-gradient-to-r from-background via-background/85 to-background/20" />
+                <div className="absolute inset-0 hidden sm:block bg-gradient-to-t from-background/80 via-transparent to-transparent" />
 
-                <div className="relative z-10 h-full flex items-end sm:items-center p-6 sm:p-10 lg:p-16">
-                  <div className="max-w-xl">
-                    <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-primary/40 bg-primary/10 text-primary text-[11px] font-semibold uppercase tracking-wider mb-4">
-                      <s.icon className="w-3.5 h-3.5" />
+                <div className="relative z-10 h-full flex items-end sm:items-center p-5 sm:p-10 lg:p-16">
+                  <div className="max-w-xl w-full">
+                    <div className="inline-flex items-center gap-2 px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-full border border-primary/40 bg-primary/10 backdrop-blur text-primary text-[10px] sm:text-[11px] font-semibold uppercase tracking-wider mb-3 sm:mb-4">
+                      <s.icon className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
                       {s.subtitle}
                     </div>
-                    <h3 className="font-display text-2xl sm:text-4xl lg:text-5xl font-extrabold mb-3 leading-tight">
+                    <h3 className="font-display text-2xl sm:text-4xl lg:text-5xl font-extrabold mb-2 sm:mb-3 leading-tight">
                       <span className="text-gradient-gold">{s.title}</span>
                     </h3>
-                    <p className="text-sm sm:text-base text-muted-foreground mb-5 max-w-md leading-relaxed">
+                    <p className="text-sm sm:text-base text-muted-foreground mb-4 sm:mb-5 max-w-md leading-relaxed">
                       {s.desc}
                     </p>
-                    <ul className="space-y-2 mb-6 hidden sm:block">
+                    <ul className="space-y-1.5 sm:space-y-2 mb-5 sm:mb-6">
                       {s.bullets.map((b) => (
-                        <li key={b} className="flex items-center gap-2 text-sm text-foreground/90">
-                          <span className="w-5 h-5 rounded-full bg-primary/15 border border-primary/40 flex items-center justify-center">
-                            <Check className="w-3 h-3 text-primary" />
+                        <li key={b} className="flex items-center gap-2 text-xs sm:text-sm text-foreground/90">
+                          <span className="w-4 h-4 sm:w-5 sm:h-5 rounded-full bg-primary/15 border border-primary/40 flex items-center justify-center flex-shrink-0">
+                            <Check className="w-2.5 h-2.5 sm:w-3 sm:h-3 text-primary" />
                           </span>
                           {b}
                         </li>
                       ))}
                     </ul>
                     <QuoteDialog>
-                      <Button className="bg-primary text-primary-foreground hover:bg-primary-glow shadow-gold font-semibold">
-                        Solicitar orçamento
-                        <ArrowRight className="w-4 h-4" />
+                      <Button className="btn-shine relative overflow-hidden bg-primary text-primary-foreground hover:bg-primary-glow shadow-gold font-semibold w-full sm:w-auto">
+                        <span className="relative z-10 inline-flex items-center gap-2">
+                          Solicitar orçamento
+                          <ArrowRight className="w-4 h-4" />
+                        </span>
                       </Button>
                     </QuoteDialog>
                   </div>
@@ -135,8 +140,8 @@ const ServicesCarousel = () => {
             onClick={() => scrollTo(i)}
             aria-label={`Ir para slide ${i + 1}`}
             className={cn(
-              "h-1.5 rounded-full transition-all duration-300",
-              selected === i ? "w-8 bg-primary" : "w-3 bg-border hover:bg-primary/50",
+              "h-2 rounded-full transition-all duration-300",
+              selected === i ? "w-10 bg-primary" : "w-4 bg-border hover:bg-primary/50",
             )}
           />
         ))}
