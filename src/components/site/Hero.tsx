@@ -23,9 +23,9 @@ const Hero = () => {
 
       <div className="container relative z-10 pt-32 pb-20 sm:pt-36 sm:pb-28">
         <div className="max-w-3xl animate-fade-up">
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full border border-primary/40 bg-primary/10 backdrop-blur text-primary text-[11px] sm:text-xs font-semibold uppercase tracking-wider mb-5 sm:mb-6 animate-glow">
-            <ShieldCheck className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
-            Empresa certificada • {COMPANY.tagline}
+          <div className="inline-flex items-center gap-1.5 sm:gap-2 max-w-full px-2.5 py-1 sm:px-4 sm:py-2 rounded-full border border-primary/40 bg-primary/10 backdrop-blur text-primary text-[10px] sm:text-xs font-semibold uppercase tracking-wider mb-5 sm:mb-6 animate-glow">
+            <ShieldCheck className="w-3 h-3 sm:w-4 sm:h-4 flex-shrink-0" />
+            <span className="truncate">Empresa certificada</span>
           </div>
 
           <h1 className="font-display text-[2rem] sm:text-5xl lg:text-6xl xl:text-7xl font-extrabold leading-[1.05] mb-5 sm:mb-6">
@@ -41,10 +41,12 @@ const Hero = () => {
             <QuoteDialog>
               <Button
                 size="lg"
-                className="bg-primary text-primary-foreground hover:bg-primary-glow shadow-gold font-semibold text-base h-14 px-8 group"
+                className="btn-shine relative overflow-hidden bg-primary text-primary-foreground hover:bg-primary-glow shadow-gold font-semibold text-base h-14 px-8 group"
               >
-                Solicitar orçamento
-                <ArrowDown className="w-5 h-5 group-hover:translate-y-0.5 transition-transform" />
+                <span className="relative z-10 inline-flex items-center gap-2">
+                  Solicitar orçamento
+                  <ArrowDown className="w-5 h-5 group-hover:translate-y-0.5 transition-transform" />
+                </span>
               </Button>
             </QuoteDialog>
             <Button
