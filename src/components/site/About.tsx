@@ -10,7 +10,7 @@ const points = [
 
 const About = () => {
   return (
-    <section id="sobre" className="py-24 bg-secondary/30">
+    <section id="sobre" className="py-16 sm:py-24 bg-secondary/30">
       <div className="container grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
         <div className="relative">
           <div className="absolute -inset-4 bg-gradient-gold opacity-20 blur-2xl rounded-3xl" />

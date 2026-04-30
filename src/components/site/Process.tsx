@@ -7,7 +7,7 @@ const steps = [
 
 const Process = () => {
   return (
-    <section id="processo" className="py-24 bg-secondary/30">
+    <section id="processo" className="py-16 sm:py-24 bg-secondary/30">
       <div className="container">
         <div className="max-w-2xl mx-auto text-center mb-16">
           <span className="text-primary text-sm font-semibold uppercase tracking-widest">Como Trabalhamos</span>

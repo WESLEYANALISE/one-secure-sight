@@ -61,7 +61,7 @@ const Contact = () => {
   };
 
   return (
-    <section id="contato" className="py-24 bg-background">
+    <section id="contato" className="py-16 sm:py-24 bg-background">
       <div className="container">
         <div className="max-w-2xl mx-auto text-center mb-14">
           <span className="text-primary text-sm font-semibold uppercase tracking-widest">Fale Conosco</span>
