@@ -77,7 +77,7 @@ const ServicesCarousel = () => {
   return (
     <div className="relative">
       <div className="overflow-hidden rounded-2xl sm:rounded-3xl border border-border shadow-elegant" ref={emblaRef}>
-        <div className="flex">
+        <div className="flex items-stretch">
           {slides.map((s, i) => (
             <div key={s.title} className="flex-[0_0_100%] min-w-0">
               <article className="bg-card flex flex-col h-full">
