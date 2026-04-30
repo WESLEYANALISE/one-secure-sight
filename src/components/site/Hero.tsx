@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { ShieldCheck, Star, ArrowDown, Camera } from "lucide-react";
+import { ShieldCheck, ArrowDown, Wrench } from "lucide-react";
 import hero from "@/assets/hero.jpg";
 import heroMobile from "@/assets/hero-mobile.jpg";
 import { COMPANY } from "@/config/company";
@@ -60,19 +60,15 @@ const Hero = () => {
               className="border-primary/50 text-foreground hover:bg-primary hover:text-primary-foreground font-semibold text-base h-14 px-8"
             >
               <a href="#servicos">
-                <Camera className="w-5 h-5" />
+                <Wrench className="w-5 h-5" />
                 Nossos serviços
               </a>
             </Button>
           </div>
 
           <div className="flex items-center gap-2 mt-6 text-xs sm:text-sm text-muted-foreground">
-            <div className="flex">
-              {Array.from({ length: 5 }).map((_, i) => (
-                <Star key={i} className="w-3.5 h-3.5 sm:w-4 sm:h-4 fill-primary text-primary" />
-              ))}
-            </div>
-            <span>Avaliação 5,0 — mais de 500 clientes satisfeitos</span>
+            <ShieldCheck className="w-4 h-4 text-primary flex-shrink-0" />
+            <span>Atendimento rápido, instalação profissional e garantia em todos os serviços.</span>
           </div>
 
           <div className="grid grid-cols-3 gap-4 sm:gap-6 mt-10 sm:mt-12 max-w-lg pt-8 border-t border-border/50">
