@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Sheet, SheetContent, SheetTrigger, SheetHeader, SheetTitle } from "@/components/ui/sheet";
 import logo from "@/assets/logo.png";
 import { cn } from "@/lib/utils";
 import QuoteDialog from "./QuoteDialog";
@@ -65,36 +66,59 @@ const Header = () => {
           </QuoteDialog>
         </div>
 
-        <button
-          className="lg:hidden p-2 text-foreground"
-          onClick={() => setOpen((v) => !v)}
-          aria-label="Abrir menu"
-        >
-          {open ? <X /> : <Menu />}
-        </button>
-      </div>
+        <Sheet open={open} onOpenChange={setOpen}>
+          <SheetTrigger asChild>
+            <button
+              className="lg:hidden p-2 text-foreground"
+              aria-label="Abrir menu"
+            >
+              <Menu />
+            </button>
+          </SheetTrigger>
+          <SheetContent
+            side="right"
+            className="w-[85vw] sm:w-[380px] bg-background border-l border-border p-0 flex flex-col"
+          >
+            <SheetHeader className="p-6 border-b border-border text-left">
+              <SheetTitle className="flex items-center gap-3">
+                <img src={logo} alt="One Security logo" className="h-10 w-10 rounded-full object-cover" width={40} height={40} />
+                <span className="flex flex-col leading-tight">
+                  <span className="font-display font-bold text-base">
+                    ONE <span className="text-primary">SECURITY</span>
+                  </span>
+                  <span className="text-[10px] text-muted-foreground uppercase tracking-[0.18em]">
+                    Segurança Eletrônica
+                  </span>
+                </span>
+              </SheetTitle>
+            </SheetHeader>
 
-      {open && (
-        <div className="lg:hidden bg-background border-t border-border">
-          <nav className="container py-6 flex flex-col gap-4">
-            {links.map((l) => (
-              <a
-                key={l.href}
-                href={l.href}
-                onClick={() => setOpen(false)}
-                className="text-base font-medium text-foreground/90 hover:text-primary py-2 border-b border-border/50"
-              >
-                {l.label}
-              </a>
-            ))}
-            <QuoteDialog>
-              <Button onClick={() => setOpen(false)} className="bg-primary text-primary-foreground hover:bg-primary-glow font-semibold mt-2 w-full">
-                Solicitar Orçamento
-              </Button>
-            </QuoteDialog>
-          </nav>
-        </div>
-      )}
+            <nav className="flex-1 overflow-y-auto px-6 py-6 flex flex-col gap-1">
+              {links.map((l) => (
+                <a
+                  key={l.href}
+                  href={l.href}
+                  onClick={() => setOpen(false)}
+                  className="text-base font-medium text-foreground/90 hover:text-primary hover:bg-primary/10 py-3 px-3 rounded-lg border-b border-border/40 transition-colors"
+                >
+                  {l.label}
+                </a>
+              ))}
+            </nav>
+
+            <div className="p-6 border-t border-border">
+              <QuoteDialog>
+                <Button
+                  onClick={() => setOpen(false)}
+                  className="bg-primary text-primary-foreground hover:bg-primary-glow shadow-gold font-semibold w-full h-12"
+                >
+                  Solicitar Orçamento
+                </Button>
+              </QuoteDialog>
+            </div>
+          </SheetContent>
+        </Sheet>
+      </div>
     </header>
   );
 };
