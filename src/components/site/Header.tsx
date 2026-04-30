@@ -35,9 +35,14 @@ const Header = () => {
       <div className="container flex items-center justify-between h-20">
         <a href="#top" className="flex items-center gap-3">
           <img src={logo} alt="One Security logo" className="h-12 w-12 rounded-full object-cover" width={48} height={48} />
-          <span className="font-display font-bold text-lg hidden sm:inline">
-            ONE <span className="text-primary">SECURITY</span>
-          </span>
+          <div className="flex flex-col leading-tight">
+            <span className="font-display font-bold text-base sm:text-lg">
+              ONE <span className="text-primary">SECURITY</span>
+            </span>
+            <span className="text-[10px] sm:text-xs text-muted-foreground uppercase tracking-[0.18em]">
+              Segurança Eletrônica
+            </span>
+          </div>
         </a>
 
         <nav className="hidden lg:flex items-center gap-8">
