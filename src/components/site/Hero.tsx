@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { ShieldCheck, MessageCircle, Star, ArrowDown } from "lucide-react";
 import hero from "@/assets/hero.jpg";
+import heroMobile from "@/assets/hero-mobile.jpg";
 import { COMPANY, whatsappLink } from "@/config/company";
 import QuoteDialog from "./QuoteDialog";
 import AnimatedCounter from "./AnimatedCounter";
@@ -9,14 +10,17 @@ const Hero = () => {
   return (
     <section id="top" className="relative min-h-screen flex items-center overflow-hidden">
       <div className="absolute inset-0">
-        <img
-          src={hero}
-          alt="Câmera de segurança CFTV em ambiente noturno"
-          className="w-full h-full object-cover scale-105"
-          width={1536}
-          height={1024}
-          fetchPriority="high"
-        />
+        <picture>
+          <source media="(max-width: 768px)" srcSet={heroMobile} />
+          <img
+            src={hero}
+            alt="Câmera de segurança CFTV em ambiente noturno"
+            className="w-full h-full object-cover scale-105"
+            width={1820}
+            height={1024}
+            fetchPriority="high"
+          />
+        </picture>
         <div className="absolute inset-0 bg-gradient-hero" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,hsl(45_95%_55%/0.15),transparent_60%)]" />
       </div>
