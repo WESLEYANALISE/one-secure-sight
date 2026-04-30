@@ -45,7 +45,7 @@ const Header = () => {
             <a
               key={l.href}
               href={l.href}
-              className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
+              className="story-link text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
             >
               {l.label}
             </a>

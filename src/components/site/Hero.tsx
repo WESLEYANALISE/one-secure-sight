@@ -1,8 +1,9 @@
 import { Button } from "@/components/ui/button";
-import { ShieldCheck, MessageCircle } from "lucide-react";
+import { ShieldCheck, MessageCircle, Star, ArrowDown } from "lucide-react";
 import hero from "@/assets/hero.jpg";
 import { COMPANY, whatsappLink } from "@/config/company";
 import QuoteDialog from "./QuoteDialog";
+import AnimatedCounter from "./AnimatedCounter";
 
 const Hero = () => {
   return (
@@ -11,23 +12,24 @@ const Hero = () => {
         <img
           src={hero}
           alt="Câmera de segurança CFTV em ambiente noturno"
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover scale-105"
           width={1536}
           height={1024}
           fetchPriority="high"
         />
         <div className="absolute inset-0 bg-gradient-hero" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,hsl(45_95%_55%/0.15),transparent_60%)]" />
       </div>
 
-      <div className="container relative z-10 pt-32 pb-16 sm:pt-36 sm:pb-24">
+      <div className="container relative z-10 pt-32 pb-20 sm:pt-36 sm:pb-28">
         <div className="max-w-3xl animate-fade-up">
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full border border-primary/40 bg-primary/10 text-primary text-[11px] sm:text-xs font-semibold uppercase tracking-wider mb-5 sm:mb-6">
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full border border-primary/40 bg-primary/10 backdrop-blur text-primary text-[11px] sm:text-xs font-semibold uppercase tracking-wider mb-5 sm:mb-6 animate-glow">
             <ShieldCheck className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
-            {COMPANY.tagline}
+            Empresa certificada • {COMPANY.tagline}
           </div>
 
           <h1 className="font-display text-[2rem] sm:text-5xl lg:text-6xl xl:text-7xl font-extrabold leading-[1.05] mb-5 sm:mb-6">
-            Segurança eletrônica que <span className="text-gradient-gold">protege o que importa</span>.
+            Segurança eletrônica que <span className="shimmer-text">protege o que importa</span>.
           </h1>
 
           <p className="text-base sm:text-lg text-muted-foreground max-w-xl mb-7 sm:mb-8 leading-relaxed">
@@ -36,40 +38,71 @@ const Hero = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4">
+            <QuoteDialog>
+              <Button
+                size="lg"
+                className="bg-primary text-primary-foreground hover:bg-primary-glow shadow-gold font-semibold text-base h-14 px-8 group"
+              >
+                Solicitar orçamento
+                <ArrowDown className="w-5 h-5 group-hover:translate-y-0.5 transition-transform" />
+              </Button>
+            </QuoteDialog>
             <Button
               asChild
               size="lg"
-              className="bg-primary text-primary-foreground hover:bg-primary-glow shadow-gold font-semibold text-base h-14 px-8"
+              variant="outline"
+              className="border-primary/50 text-foreground hover:bg-primary hover:text-primary-foreground font-semibold text-base h-14 px-8"
             >
               <a href={whatsappLink()} target="_blank" rel="noopener noreferrer">
                 <MessageCircle className="w-5 h-5" />
                 Falar no WhatsApp
               </a>
             </Button>
-            <QuoteDialog>
-              <Button
-                size="lg"
-                variant="outline"
-                className="border-primary/50 text-foreground hover:bg-primary hover:text-primary-foreground font-semibold text-base h-14 px-8"
-              >
-                Solicitar orçamento
-              </Button>
-            </QuoteDialog>
+          </div>
+
+          <div className="flex items-center gap-2 mt-6 text-xs sm:text-sm text-muted-foreground">
+            <div className="flex">
+              {Array.from({ length: 5 }).map((_, i) => (
+                <Star key={i} className="w-3.5 h-3.5 sm:w-4 sm:h-4 fill-primary text-primary" />
+              ))}
+            </div>
+            <span>Avaliação 5,0 — mais de 500 clientes satisfeitos</span>
           </div>
 
           <div className="grid grid-cols-3 gap-4 sm:gap-6 mt-10 sm:mt-12 max-w-lg pt-8 border-t border-border/50">
             <div>
-              <div className="font-display text-xl sm:text-3xl font-bold text-primary leading-none">{COMPANY.experience}</div>
-              <div className="text-[11px] sm:text-xs text-muted-foreground mt-2">de experiência</div>
+              <div className="font-display text-2xl sm:text-3xl font-bold text-primary leading-none">
+                +<AnimatedCounter end={10} />
+              </div>
+              <div className="text-[11px] sm:text-xs text-muted-foreground mt-2">anos de experiência</div>
             </div>
             <div>
-              <div className="font-display text-xl sm:text-3xl font-bold text-primary leading-none">{COMPANY.clients}</div>
-              <div className="text-[11px] sm:text-xs text-muted-foreground mt-2">atendidos</div>
+              <div className="font-display text-2xl sm:text-3xl font-bold text-primary leading-none">
+                +<AnimatedCounter end={1500} />
+              </div>
+              <div className="text-[11px] sm:text-xs text-muted-foreground mt-2">clientes atendidos</div>
             </div>
             <div>
-              <div className="font-display text-xl sm:text-3xl font-bold text-primary leading-none">24h</div>
+              <div className="font-display text-2xl sm:text-3xl font-bold text-primary leading-none">24h</div>
               <div className="text-[11px] sm:text-xs text-muted-foreground mt-2">suporte técnico</div>
             </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Trust bar */}
+      <div className="absolute bottom-0 left-0 right-0 z-10 border-t border-border/50 bg-background/60 backdrop-blur">
+        <div className="container py-4 overflow-hidden mask-fade-x">
+          <div className="flex gap-12 animate-marquee whitespace-nowrap">
+            {[...Array(2)].map((_, k) => (
+              <div key={k} className="flex gap-12 items-center">
+                {["INTELBRAS", "HIKVISION", "JFL", "GIGA SECURITY", "POSITIVON", "CITROX", "DAHUA"].map((b) => (
+                  <span key={b + k} className="font-display font-bold text-sm tracking-[0.2em] text-muted-foreground/70">
+                    {b}
+                  </span>
+                ))}
+              </div>
+            ))}
           </div>
         </div>
       </div>
