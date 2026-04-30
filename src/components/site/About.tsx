@@ -1,6 +1,8 @@
 import about from "@/assets/about.jpg";
 import { Check } from "lucide-react";
 import Reveal from "./Reveal";
+import { useInView } from "@/hooks/use-in-view";
+import { cn } from "@/lib/utils";
 
 const points = [
   "Equipe técnica certificada e uniformizada",
@@ -10,20 +12,30 @@ const points = [
 ];
 
 const About = () => {
+  const { ref, inView } = useInView<HTMLDivElement>({ threshold: 0.35 }, true);
+
   return (
     <section id="sobre" className="py-16 sm:py-24 bg-secondary/30">
       <div className="container grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
         <Reveal variant="scale">
           <div className="relative">
             <div className="absolute -inset-4 bg-gradient-gold opacity-20 blur-2xl rounded-3xl animate-glow" />
-            <img
-              src={about}
-              alt="Técnico da One Security instalando câmera de segurança"
-              loading="lazy"
-              width={1024}
-              height={1024}
-              className="relative rounded-2xl shadow-elegant w-full h-auto object-cover"
-            />
+            <div
+              ref={ref}
+              className={cn(
+                "image-shine relative rounded-2xl shadow-elegant",
+                inView && "is-active",
+              )}
+            >
+              <img
+                src={about}
+                alt="Técnico da One Security instalando câmera de segurança"
+                loading="lazy"
+                width={1024}
+                height={1024}
+                className="rounded-2xl w-full h-auto object-cover block"
+              />
+            </div>
           </div>
         </Reveal>
 
