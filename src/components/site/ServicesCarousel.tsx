@@ -79,44 +79,46 @@ const ServicesCarousel = () => {
       <div className="overflow-hidden rounded-2xl sm:rounded-3xl border border-border shadow-elegant" ref={emblaRef}>
         <div className="flex">
           {slides.map((s, i) => (
-            <div key={s.title} className="flex-[0_0_100%] min-w-0 relative">
-              <div className="relative min-h-[520px] sm:min-h-[440px] lg:min-h-[500px] sm:aspect-[16/8] lg:aspect-[16/7]">
-                <img
-                  src={s.image}
-                  alt={`${s.title} — ${s.subtitle}`}
-                  loading={i === 0 ? "eager" : "lazy"}
-                  width={1280}
-                  height={720}
-                  className="absolute inset-0 w-full h-full object-cover"
-                />
-                {/* Mobile: gradient bottom-up */}
-                <div className="absolute inset-0 sm:hidden bg-gradient-to-t from-background via-background/85 to-background/30" />
-                {/* Desktop: gradient left-right */}
-                <div className="absolute inset-0 hidden sm:block bg-gradient-to-r from-background via-background/85 to-background/20" />
-                <div className="absolute inset-0 hidden sm:block bg-gradient-to-t from-background/80 via-transparent to-transparent" />
-
-                <div className="relative z-10 h-full flex items-end sm:items-center p-5 sm:p-10 lg:p-16">
-                  <div className="max-w-xl w-full">
-                    <div className="inline-flex items-center gap-2 px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-full border border-primary/40 bg-primary/10 backdrop-blur text-primary text-[10px] sm:text-[11px] font-semibold uppercase tracking-wider mb-3 sm:mb-4">
+            <div key={s.title} className="flex-[0_0_100%] min-w-0">
+              <article className="bg-card flex flex-col h-full">
+                {/* Imagem em cima */}
+                <div className="relative aspect-[16/10] sm:aspect-[21/9] overflow-hidden">
+                  <img
+                    src={s.image}
+                    alt={`${s.title} — ${s.subtitle}`}
+                    loading={i === 0 ? "eager" : "lazy"}
+                    width={1280}
+                    height={720}
+                    className="absolute inset-0 w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-card via-card/30 to-transparent" />
+                  <div className="absolute top-4 left-4">
+                    <div className="inline-flex items-center gap-2 px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-full border border-primary/40 bg-background/70 backdrop-blur text-primary text-[10px] sm:text-[11px] font-semibold uppercase tracking-wider">
                       <s.icon className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
                       {s.subtitle}
                     </div>
-                    <h3 className="font-display text-2xl sm:text-4xl lg:text-5xl font-extrabold mb-2 sm:mb-3 leading-tight">
-                      <span className="text-gradient-gold">{s.title}</span>
-                    </h3>
-                    <p className="text-sm sm:text-base text-muted-foreground mb-4 sm:mb-5 max-w-md leading-relaxed">
-                      {s.desc}
-                    </p>
-                    <ul className="space-y-1.5 sm:space-y-2 mb-5 sm:mb-6">
-                      {s.bullets.map((b) => (
-                        <li key={b} className="flex items-center gap-2 text-xs sm:text-sm text-foreground/90">
-                          <span className="w-4 h-4 sm:w-5 sm:h-5 rounded-full bg-primary/15 border border-primary/40 flex items-center justify-center flex-shrink-0">
-                            <Check className="w-2.5 h-2.5 sm:w-3 sm:h-3 text-primary" />
-                          </span>
-                          {b}
-                        </li>
-                      ))}
-                    </ul>
+                  </div>
+                </div>
+
+                {/* Conteúdo embaixo — altura fixa para padronizar slides */}
+                <div className="p-6 sm:p-8 lg:p-10 flex flex-col flex-1 min-h-[340px] sm:min-h-[300px]">
+                  <h3 className="font-display text-2xl sm:text-3xl lg:text-4xl font-extrabold mb-3 leading-tight">
+                    <span className="text-gradient-gold">{s.title}</span>
+                  </h3>
+                  <p className="text-sm sm:text-base text-muted-foreground mb-4 leading-relaxed">
+                    {s.desc}
+                  </p>
+                  <ul className="space-y-1.5 sm:space-y-2 mb-6">
+                    {s.bullets.map((b) => (
+                      <li key={b} className="flex items-center gap-2 text-xs sm:text-sm text-foreground/90">
+                        <span className="w-4 h-4 sm:w-5 sm:h-5 rounded-full bg-primary/15 border border-primary/40 flex items-center justify-center flex-shrink-0">
+                          <Check className="w-2.5 h-2.5 sm:w-3 sm:h-3 text-primary" />
+                        </span>
+                        {b}
+                      </li>
+                    ))}
+                  </ul>
+                  <div className="mt-auto">
                     <QuoteDialog>
                       <Button className="btn-shine relative overflow-hidden bg-primary text-primary-foreground hover:bg-primary-glow shadow-gold font-semibold w-full sm:w-auto">
                         <span className="relative z-10 inline-flex items-center gap-2">
@@ -127,7 +129,7 @@ const ServicesCarousel = () => {
                     </QuoteDialog>
                   </div>
                 </div>
-              </div>
+              </article>
             </div>
           ))}
         </div>
