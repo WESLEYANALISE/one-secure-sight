@@ -1,8 +1,8 @@
 import { Button } from "@/components/ui/button";
-import { ShieldCheck, MessageCircle, Star, ArrowDown } from "lucide-react";
+import { ShieldCheck, Star, ArrowDown, Camera } from "lucide-react";
 import hero from "@/assets/hero.jpg";
 import heroMobile from "@/assets/hero-mobile.jpg";
-import { COMPANY, whatsappLink } from "@/config/company";
+import { COMPANY } from "@/config/company";
 import QuoteDialog from "./QuoteDialog";
 import AnimatedCounter from "./AnimatedCounter";
 
@@ -59,9 +59,9 @@ const Hero = () => {
               variant="outline"
               className="border-primary/50 text-foreground hover:bg-primary hover:text-primary-foreground font-semibold text-base h-14 px-8"
             >
-              <a href={whatsappLink()} target="_blank" rel="noopener noreferrer">
-                <MessageCircle className="w-5 h-5" />
-                Falar no WhatsApp
+              <a href="#servicos">
+                <Camera className="w-5 h-5" />
+                Nossos serviços
               </a>
             </Button>
           </div>
