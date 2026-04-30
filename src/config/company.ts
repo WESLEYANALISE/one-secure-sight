@@ -1,9 +1,9 @@
 export const COMPANY = {
   name: "One Security",
   tagline: "Segurança Eletrônica",
-  phone: "(00) 0000-0000",
-  whatsapp: "5500000000000", // formato internacional sem +, espaços ou traços
-  whatsappDisplay: "(00) 90000-0000",
+  phone: "(11) 95404-9575",
+  whatsapp: "5511954049575", // formato internacional sem +, espaços ou traços
+  whatsappDisplay: "(11) 95404-9575",
   email: "contato@onesecurity.com.br",
   address: "Sua Cidade, UF",
   hours: "Atendimento 24h • 7 dias por semana",
