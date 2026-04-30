@@ -212,3 +212,7 @@
     z-index: 5;
   }
 }
+
+#lovable-badge {
+  display: none !important;
+}
