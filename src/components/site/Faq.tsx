@@ -34,7 +34,7 @@ const faqs = [
 
 const Faq = () => {
   return (
-    <section className="py-24 bg-secondary/30">
+    <section className="py-16 sm:py-24 bg-secondary/30">
       <div className="container max-w-3xl">
         <div className="text-center mb-12">
           <span className="text-primary text-sm font-semibold uppercase tracking-widest">Dúvidas Frequentes</span>

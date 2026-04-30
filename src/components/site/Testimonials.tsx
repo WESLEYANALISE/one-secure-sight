@@ -20,7 +20,7 @@ const items = [
 
 const Testimonials = () => {
   return (
-    <section className="py-24 bg-background">
+    <section className="py-16 sm:py-24 bg-background">
       <div className="container">
         <div className="max-w-2xl mx-auto text-center mb-16">
           <span className="text-primary text-sm font-semibold uppercase tracking-widest">Depoimentos</span>
