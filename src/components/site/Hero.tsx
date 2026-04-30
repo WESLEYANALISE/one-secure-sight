@@ -18,18 +18,18 @@ const Hero = () => {
         <div className="absolute inset-0 bg-gradient-hero" />
       </div>
 
-      <div className="container relative z-10 pt-28 pb-20">
+      <div className="container relative z-10 pt-32 pb-16 sm:pt-36 sm:pb-24">
         <div className="max-w-3xl animate-fade-up">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary/40 bg-primary/10 text-primary text-xs font-semibold uppercase tracking-wider mb-6">
-            <ShieldCheck className="w-4 h-4" />
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full border border-primary/40 bg-primary/10 text-primary text-[11px] sm:text-xs font-semibold uppercase tracking-wider mb-5 sm:mb-6">
+            <ShieldCheck className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
             {COMPANY.tagline}
           </div>
 
-          <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-[1.05] mb-6">
+          <h1 className="font-display text-[2rem] sm:text-5xl lg:text-6xl xl:text-7xl font-extrabold leading-[1.05] mb-5 sm:mb-6">
             Segurança eletrônica que <span className="text-gradient-gold">protege o que importa</span>.
           </h1>
 
-          <p className="text-lg text-muted-foreground max-w-xl mb-8">
+          <p className="text-base sm:text-lg text-muted-foreground max-w-xl mb-7 sm:mb-8 leading-relaxed">
             CFTV, alarmes, cerca elétrica, interfonia e controle de acesso. Projetos sob medida
             para residências, comércios e indústrias com tecnologia de ponta e suporte 24h.
           </p>
