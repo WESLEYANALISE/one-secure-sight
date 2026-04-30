@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { ShieldCheck, ArrowDown, Wrench } from "lucide-react";
+import { ShieldCheck, ArrowRight, Wrench } from "lucide-react";
 import hero from "@/assets/hero.jpg";
 import heroMobile from "@/assets/hero-mobile.jpg";
 import { COMPANY } from "@/config/company";
@@ -49,7 +49,7 @@ const Hero = () => {
               >
                 <span className="relative z-10 inline-flex items-center gap-2">
                   Solicitar orçamento
-                  <ArrowDown className="w-5 h-5 group-hover:translate-y-0.5 transition-transform" />
+                  <ArrowRight className="w-5 h-5 group-hover:translate-x-0.5 transition-transform" />
                 </span>
               </Button>
             </QuoteDialog>
