@@ -55,18 +55,18 @@ const Hero = () => {
             </Button>
           </div>
 
-          <div className="grid grid-cols-3 gap-6 mt-12 max-w-lg">
+          <div className="grid grid-cols-3 gap-4 sm:gap-6 mt-10 sm:mt-12 max-w-lg pt-8 border-t border-border/50">
             <div>
-              <div className="font-display text-2xl sm:text-3xl font-bold text-primary">{COMPANY.experience}</div>
-              <div className="text-xs text-muted-foreground mt-1">de experiência</div>
+              <div className="font-display text-xl sm:text-3xl font-bold text-primary leading-none">{COMPANY.experience}</div>
+              <div className="text-[11px] sm:text-xs text-muted-foreground mt-2">de experiência</div>
             </div>
             <div>
-              <div className="font-display text-2xl sm:text-3xl font-bold text-primary">{COMPANY.clients}</div>
-              <div className="text-xs text-muted-foreground mt-1">atendidos</div>
+              <div className="font-display text-xl sm:text-3xl font-bold text-primary leading-none">{COMPANY.clients}</div>
+              <div className="text-[11px] sm:text-xs text-muted-foreground mt-2">atendidos</div>
             </div>
             <div>
-              <div className="font-display text-2xl sm:text-3xl font-bold text-primary">24h</div>
-              <div className="text-xs text-muted-foreground mt-1">suporte técnico</div>
+              <div className="font-display text-xl sm:text-3xl font-bold text-primary leading-none">24h</div>
+              <div className="text-[11px] sm:text-xs text-muted-foreground mt-2">suporte técnico</div>
             </div>
           </div>
         </div>
