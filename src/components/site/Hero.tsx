@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { ShieldCheck, Star, ArrowDown, Wrench } from "lucide-react";
+import { ShieldCheck, ArrowDown, Wrench } from "lucide-react";
 import hero from "@/assets/hero.jpg";
 import heroMobile from "@/assets/hero-mobile.jpg";
 import { COMPANY } from "@/config/company";
