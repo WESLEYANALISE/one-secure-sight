@@ -5,11 +5,11 @@ import { Camera, Bell, Zap, PhoneCall, Fingerprint, Check, ArrowRight } from "lu
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import QuoteDialog from "./QuoteDialog";
-import cftv from "@/assets/services/cftv.jpg";
-import alarme from "@/assets/services/alarme.jpg";
-import cerca from "@/assets/services/cerca-eletrica.jpg";
-import interfonia from "@/assets/services/interfonia.jpg";
-import controle from "@/assets/services/controle-acesso.jpg";
+import cftv from "@/assets/services/cftv.webp";
+import alarme from "@/assets/services/alarme.webp";
+import cerca from "@/assets/services/cerca-eletrica.webp";
+import interfonia from "@/assets/services/interfonia.webp";
+import controle from "@/assets/services/controle-acesso.webp";
 
 const slides = [
   {

@@ -1,4 +1,4 @@
-import about from "@/assets/about.jpg";
+import about from "@/assets/about.webp";
 import { Check } from "lucide-react";
 import Reveal from "./Reveal";
 import { useInView } from "@/hooks/use-in-view";
