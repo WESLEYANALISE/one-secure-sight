@@ -87,6 +87,8 @@ const ServicesCarousel = () => {
                     src={s.image}
                     alt={`${s.title} — ${s.subtitle}`}
                     loading={i === 0 ? "eager" : "lazy"}
+                    decoding="async"
+                    fetchPriority={i === 0 ? "high" : "auto"}
                     width={1280}
                     height={720}
                     className="absolute inset-0 w-full h-full object-cover"
