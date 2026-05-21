@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { ShieldCheck, ArrowRight, Wrench, Camera, Bell, Zap, PhoneCall, Fingerprint } from "lucide-react";
-import hero from "@/assets/hero.jpg";
-import heroMobile from "@/assets/hero-mobile.jpg";
+import hero from "@/assets/hero.webp";
+import heroMobile from "@/assets/hero-mobile.webp";
 import { COMPANY } from "@/config/company";
 import QuoteDialog from "./QuoteDialog";
 import AnimatedCounter from "./AnimatedCounter";
