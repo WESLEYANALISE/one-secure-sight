@@ -59,7 +59,7 @@ const Footer = () => {
 
       <div className="container mt-12 pt-6 border-t border-border flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-muted-foreground">
         <span>© {new Date().getFullYear()} One Security. Todos os direitos reservados.</span>
-        <span>CNPJ 00.000.000/0001-00</span>
+        <span>CNPJ 57.823.422/0001-84</span>
       </div>
     </footer>
   );
