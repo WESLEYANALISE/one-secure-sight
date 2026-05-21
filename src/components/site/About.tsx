@@ -31,6 +31,7 @@ const About = () => {
                 src={about}
                 alt="Técnico da One Security instalando câmera de segurança"
                 loading="lazy"
+                decoding="async"
                 width={1024}
                 height={1024}
                 className="rounded-2xl w-full h-auto object-cover block"
