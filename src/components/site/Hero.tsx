@@ -27,10 +27,6 @@ const Hero = () => {
 
       <div className="container relative z-10 pt-32 pb-20 sm:pt-36 sm:pb-28">
         <div className="max-w-3xl animate-fade-up">
-          <div className="inline-flex items-center gap-1.5 sm:gap-2 max-w-full px-2.5 py-1 sm:px-4 sm:py-2 rounded-full border border-primary/40 bg-primary/10 backdrop-blur text-primary text-[10px] sm:text-xs font-semibold uppercase tracking-wider mb-5 sm:mb-6 animate-glow">
-            <ShieldCheck className="w-3 h-3 sm:w-4 sm:h-4 flex-shrink-0" />
-            <span className="truncate">Empresa certificada</span>
-          </div>
 
           <h1 className="font-display text-[2rem] sm:text-5xl lg:text-6xl xl:text-7xl font-extrabold leading-[1.05] mb-5 sm:mb-6">
             Segurança eletrônica que <span className="shimmer-text">protege o que importa</span>.
