@@ -120,7 +120,7 @@ const ServicesCarousel = () => {
                       </li>
                     ))}
                   </ul>
-                  <div className="mt-auto">
+                  <div className="mt-auto lg:mt-2">
                     <QuoteDialog>
                       <Button className="btn-shine relative overflow-hidden bg-primary text-primary-foreground hover:bg-primary-glow shadow-gold font-semibold w-full sm:w-auto">
                         <span className="relative z-10 inline-flex items-center gap-2">
