@@ -80,9 +80,9 @@ const ServicesCarousel = () => {
         <div className="flex items-stretch">
           {slides.map((s, i) => (
             <div key={s.title} className="flex-[0_0_100%] min-w-0">
-              <article className="bg-card flex flex-col h-full">
-                {/* Imagem em cima */}
-                <div className="relative aspect-[16/10] sm:aspect-[21/9] overflow-hidden">
+              <article className="bg-card flex flex-col lg:grid lg:grid-cols-2 lg:items-stretch h-full">
+                {/* Imagem: em cima no mobile, à esquerda no desktop */}
+                <div className="relative aspect-[16/10] sm:aspect-[21/9] lg:aspect-auto lg:h-full lg:min-h-[380px] lg:max-h-[440px] overflow-hidden">
                   <img
                     src={s.image}
                     alt={`${s.title} — ${s.subtitle}`}
@@ -93,7 +93,7 @@ const ServicesCarousel = () => {
                     height={720}
                     className="absolute inset-0 w-full h-full object-cover"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-card via-card/30 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-card via-card/30 to-transparent lg:bg-gradient-to-r lg:from-transparent lg:via-card/10 lg:to-card" />
                   <div className="absolute top-4 left-4">
                     <div className="inline-flex items-center gap-2 px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-full border border-primary/40 bg-background/70 backdrop-blur text-primary text-[10px] sm:text-[11px] font-semibold uppercase tracking-wider">
                       <s.icon className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
@@ -102,8 +102,8 @@ const ServicesCarousel = () => {
                   </div>
                 </div>
 
-                {/* Conteúdo embaixo — altura fixa para padronizar slides */}
-                <div className="p-6 sm:p-8 lg:p-10 flex flex-col flex-1 min-h-[340px] sm:min-h-[300px]">
+                {/* Conteúdo */}
+                <div className="p-6 sm:p-8 lg:p-10 flex flex-col flex-1 min-h-[340px] sm:min-h-[300px] lg:min-h-0 lg:justify-center">
                   <h3 className="font-display text-2xl sm:text-3xl lg:text-4xl font-extrabold mb-3 leading-tight">
                     <span className="text-gradient-gold">{s.title}</span>
                   </h3>
@@ -120,7 +120,7 @@ const ServicesCarousel = () => {
                       </li>
                     ))}
                   </ul>
-                  <div className="mt-auto">
+                  <div className="mt-auto lg:mt-2">
                     <QuoteDialog>
                       <Button className="btn-shine relative overflow-hidden bg-primary text-primary-foreground hover:bg-primary-glow shadow-gold font-semibold w-full sm:w-auto">
                         <span className="relative z-10 inline-flex items-center gap-2">
